@@ -23,9 +23,25 @@ h2{
 }
 
 
+#total-result{
+    display: none;
+}
+/* Loading Part Css Start */
+#loading{
+    display: none;
+}
+/* Loading Part Css End */
+
+/* Search Rrsult Part Css Start */
+#search-details{
+    display: none;
+}
+/* Search Rrsult Part Css End. */
+
+
 /* Dynamic book Patr  Start*/
-/* .col{
-    display: inline-block;
-    grid-template-columns: repeat(4,1fr);
+/* #display-card{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
 } */
 
