@@ -22,10 +22,12 @@ h2{
     margin-top: 50px;
 }
 
-
-#total-result{
-    display: none;
+/* Display Card Part start */
+.card-details{
+    margin-top: 300px;
 }
+/* Display Card Part End */
+
 /* Loading Part Css Start */
 #loading{
     display: none;

@@ -14,9 +14,7 @@
 </head>
 
 <body>
-
     <!-- Header Part Start -->
-
     <header>
         <section id="container" class="book-head w-50 mx-auto">
             <!--  Search & Input Area Start -->
@@ -37,23 +35,22 @@
                 <!-- Toggole Spinner Part start -->
                 <div id="loading" class="text-center">Please Wait...</div>
                 <!-- Toggole Spinner Part end -->
-                <!-- Remove Previous Search Result Part start -->
-                <div id="remove-result" class="text-center"></div>
-                <!-- Remove Previous Search Result Part End. -->
-
                 <!-- Search result found start -->
                 <div id="search-details" class="text-center">Couldn't found. Please search with a valid book name.</div>
                 <!-- Search result found end -->
+                <!-- Total result found start -->
+                <div id="show-result" class="text-center"></div>
+                <!-- Total result found end -->
             </div>
             <!--  Search & Input Area End. -->
         </section>
     </header>
     <!-- Header Part End.-->
     <!-- Main Part Start.-->
-    <main class="gy-10"> <br> <br> <br><br> <br> <br> <br>
+    <main class="gy-10 card-details">
         <section id="container" class="mt-10 w-75 mx-auto">
             <!-- Create display card part start -->
-            <div id="display-card" class=" row row-cols-4 g-4">
+            <div id="display-card" class=" d-flex row row-cols-4 g-4 shadow-lg">
             </div>
             <!-- Create display card part end -->
         </section>
