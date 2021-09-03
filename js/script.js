@@ -4,31 +4,36 @@ const searchBook = () => {
     searchInput.value = '';
     /* toggole-Spinner-Part(Display) */
     toggoleSpinner('block');
-    /* Previous-Result-Part(remove) */
+    /* Previous-Result-Part(Remove) */
     previousResult('none');
 
     // console.log(searchText)
-    const url = `http://openlibrary.org/search.json?q=${searchText}`;
+    const url = `https://openlibrary.org/search.json?q=${searchText}`;
     fetch(url)
         .then(res => res.json())
-        .then(data => displaySeacrhBook(data.docs))
+        .then(data => displaySeacrhBook(data))
 }
-const displaySeacrhBook = books => {
-    console.log(books);
+const displaySeacrhBook = data => {
+    /* Total-Book-Found-Part(Display) */
+    const showResult = document.getElementById('show-result');
+    showResult.innerHTML = `
+      <h3>  >>Total Books Found:(${data.numFound})</h3>
+      `;
     const displayBook = document.getElementById('display-card');
     displayBook.textContent = '';
-
+    const books = data.docs.slice(0, 30);
     // console.log(books);
     if (books.length === 0) {
+        /* Search-Result-Part(Display) */
         searchDetails('block');
+        /* toggole-Spinner-Part(Remove) */
         toggoleSpinner('none');
+        /* Total-Book-Found-Part(Remove) */
+        const showResult = document.getElementById('show-result');
+        showResult.innerHTML = '';
     } else {
         books?.forEach(book => {
             // console.log(book);
-            const showResult = document.getElementById('show-result');
-            showResult.innerHTML = `
-            <h1>Total  Books Found:${books.length}</h1>
-            `;
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `
@@ -45,13 +50,13 @@ const displaySeacrhBook = books => {
                 </div>
                 `;
             displayBook.appendChild(div);
-        })
+        });
         /* toggole-Spinner-Part(Remove) */
         toggoleSpinner('none');
         /* New-Result-Part(Display) */
         previousResult('block');
+        /* Search-Result-Part(Remove) */
         searchDetails('none');
-
     }
 }
 /* search details  part */
@@ -67,9 +72,9 @@ const searchDetails = displayStyle => {
     document.getElementById('search-details').style.display = displayStyle;
 }
 /* Unexpected Typing Error Result  Part */
-const totalResult = displayStyle => {
+/* const totalResult = displayStyle => {
     document.getElementById('show-result').style.display = displayStyle;
-}
+} */
 
 
 // num_found

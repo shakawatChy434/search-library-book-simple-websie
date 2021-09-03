@@ -11,6 +11,7 @@ ul li{
     text-decoration: none;
     list-style: none;
 }
+/* Title Part Start */
 h2{
     color: #000;
     margin-top: auto;
@@ -18,13 +19,27 @@ h2{
     justify-content: center;
     
 }
+/* Title Part End */
+
+/* Display Amount of  total books part start */
+h3{
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 200px;
+    text-align: left;
+    justify-content: left;
+}
+/* Display Amount of  total books part end. */
+
+/* Display Search Part start */
 .book-searchDetails{
     margin-top: 50px;
 }
+/* Display Search Part End */
 
 /* Display Card Part start */
 .card-details{
-    margin-top: 300px;
+    margin-top: 250px;
 }
 /* Display Card Part End */
 
@@ -36,14 +51,9 @@ h2{
 
 /* Search Rrsult Part Css Start */
 #search-details{
+    color: red;
+    font-size: 20px;
     display: none;
 }
 /* Search Rrsult Part Css End. */
-
-
-/* Dynamic book Patr  Start*/
-/* #display-card{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-} */
 
